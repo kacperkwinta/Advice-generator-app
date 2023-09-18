@@ -2,6 +2,7 @@ const apiUrl = "https://api.api-ninjas.com/v1/quotes?";
 const apiKey = "2TidqqXkCjVE08hf7pDsYQ==bJmQVy2ku63YTUvq";
 const quoteElement = document.querySelector(".quote");
 const categoryElement = document.querySelector(".category");
+const authorElement = document.querySelector(".author");
 const btn = document.querySelector(".btn");
 
 async function fetchQuote() {
@@ -18,9 +19,10 @@ async function fetchQuote() {
 		}
 
 		const data = await response.json();
-		const { quote, category } = data[0];
-		quoteElement.textContent = quote;
+		const { author, quote, category } = data[0];
+		quoteElement.textContent = `"${quote}"`;
 		categoryElement.textContent = `#${category}`;
+		authorElement.textContent = `- ${author}`;
 		console.log(data);
 	} catch (error) {
 		console.error(error);
