@@ -173,16 +173,30 @@ button {
 	padding: 1.6rem;
 	border: none;
 	background-color: $color-primary-2;
-	transition: all 100ms ease;
+	transition: all 450ms ease;
+
+	animation: wobble;
+	animation-duration: 0.5s;
 
 	@include flex(center, center, 0);
 
 	&:hover {
 		cursor: pointer;
 		box-shadow: $color-primary-2 0px 4px 24px;
+
+		img {
+			animation: wobble;
+			animation-duration: 1.25s;
+		}
 	}
 
 	&:active {
-		transform: translateY(6px);
+		animation: headShake;
+		animation-duration: 1s;
+
+		img {
+			animation: woble;
+			animation-duration: 3s;
+		}
 	}
 }
