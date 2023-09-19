@@ -23,7 +23,7 @@ async function fetchQuote() {
 		quoteElement.textContent = `"${quote}"`;
 		categoryElement.textContent = `#${category}`;
 		authorElement.textContent = `- ${author}`;
-		console.log(data);
+		// console.log(data);
 	} catch (error) {
 		console.error(error);
 	}
